@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+/*@use './config-scss/variables.scss'; //versao mais nova angular
+@use './config-scss/reset.scss'; //versao mais nova angular
+@use './config-scss/rem-calc.scss'; ///versao mais nova angular */
+
+@import './config-scss/variables.scss';
+@import './config-scss/reset.scss';
+@import './config-scss/rem-calc.scss';
+@import './config-scss/btn.scss';
+@import './config-scss/animations.scss';
+
+html{
+ font-family: 'Roboto', sans-serif;
+ background: var(--primary-color);
+}
+
+main{
+    //border: 1px solid red;
+    padding: 1rem;
+
+    width: rem-calc(600);
+    margin: 0 auto;
+    box-sizing: border-box;
+    
+}
+

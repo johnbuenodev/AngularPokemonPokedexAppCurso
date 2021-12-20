@@ -1,0 +1,14 @@
+@import '../../../config-scss/rem-calc.scss';
+
+//Host altera somente a propriedade no arquivo para esse valor localmente
+:host{
+    header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        //Funcao calc top bottom calculados e left / right igual a 0
+        padding: rem-calc(40) 0;
+    }
+}
+

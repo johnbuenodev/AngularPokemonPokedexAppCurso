@@ -1,0 +1,46 @@
+<poke-header></poke-header>
+
+<main>
+
+    <ng-template [ngIf]="isLoading">
+        <section class="pokemon__names">
+            <h1 class="slideInLeft" >{{pokemonDetails[0].name}}</h1>
+            <h2 class="slideInRight" >{{pokemonDetails[1].names[0].name}}</h2>
+        </section>
+
+        <section class="pokemon__status">
+            <img 
+              [src]="pokemonDetails[0].sprites.other.dream_world.front_default" 
+              [alt]="pokemonDetails[0].name"
+              class="slideInDown"
+            >
+
+            <article class="pokemon__status__statistics fadeIn" >
+                <section>
+                    <h3>Estatísticas</h3>
+
+                    <ol>
+                        <li *ngFor="let value of pokemonDetails[0].stats">
+                            {{ value.stat.name }}
+
+                            <strong>
+                                {{ value.base_stat }}
+                            </strong>
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- Passando rota inicial -->
+                <a [routerLink]="['']" class="btn btn__secondary">
+                    Voltar
+                </a>
+            </article>
+        </section>
+    </ng-template>
+
+    <img *ngIf="loadingError"
+     src="assets/error.png" 
+     alt="Deu erro na mostragem do conteúdo"
+     style="width:100%"
+     >
+</main>

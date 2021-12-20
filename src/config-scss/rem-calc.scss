@@ -1,0 +1,5 @@
+@function rem-calc($size) {
+    $value: $size / 16;
+    /* Template string do SCSS #{variable} */  
+    @return #{$value}rem;
+}

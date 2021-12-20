@@ -1,0 +1,72 @@
+<ng-template *ngIf="isLoading" ngFor let-pokemon [ngForOf]="getAllPokemons">
+    <!-- <div class="container"> -->
+    <div [routerLink]="[ 'details', pokemon.informationsPokemon.id ]" class="pokemon-card"
+        *ngIf="pokemon.informationsPokemon">
+        <section class="pokemon-card__status">
+            <h2>
+                {{pokemon.name}}
+            </h2>
+
+            <ul>
+                <!-- informationsPokemon é um conjunto de objetos json q foi montado no service -->
+                <li *ngFor="let value of pokemon.informationsPokemon.types">
+                    {{ value.type.name }}
+                </li>
+            </ul>
+            <span>Altura: {{ pokemon.informationsPokemon.height }}</span>
+
+        </section>
+
+        <section class="pokemon-card__image">
+            <!-- interpolation -->
+            <!-- <img src={{pokemon.informationsPokemon.sprites.other.dream_world.front_default}} alt="pokemon"> -->
+            <!-- template expression -->
+            <img [src]="pokemon.informationsPokemon.sprites.other.dream_world.front_default" [alt]="pokemon.name">
+        </section>
+    </div>
+    <!--
+        <div class="pokemon-card">
+            <section class="pokemon-card__status"> 
+                <h2>
+                    Bulbasaur
+                </h2>
+        
+                <ul>
+                    <li>
+                        Grass
+                    </li>
+                    <li>
+                        Poison
+                    </li>
+                </ul>
+        
+            </section>
+            
+            <section class="pokemon-card__image">
+              <img src="../../../assets/pokemon.png" alt="pokemon">
+            </section>
+        </div>
+        <div class="pokemon-card">
+            <section class="pokemon-card__status"> 
+                <h2>
+                    Bulbasaur
+                </h2>
+        
+                <ul>
+                    <li>
+                        Grass
+                    </li>
+                    <li>
+                        Poison
+                    </li>
+                </ul>
+        
+            </section>
+            
+            <section class="pokemon-card__image">
+              <img src="../../../assets/pokemon.png" alt="pokemon">
+            </section>
+        </div>
+        </div> -->
+</ng-template>
+<img *ngIf="loadingError" src="assets/error.png" alt="Deu erro na mostragem do conteúdo" style="width:100%">

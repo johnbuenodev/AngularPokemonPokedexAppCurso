@@ -4,13 +4,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//Importe HttpClientModule para requisições http
+import { HttpClientModule } from '@angular/common/http';
+
+//modules
+import { PagesModule } from './pages/pages.module';
+
+///components
+
+
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PagesModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
